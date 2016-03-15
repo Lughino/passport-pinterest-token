@@ -1,12 +1,8 @@
 {
-  "name": "passport-facebook-token",
+  "name": "passport-pinterest-token",
   "version": "1.0.0",
   "description": "Pinterest token authentication strategy for Passport",
   "main": "lib/index.js",
-  "scripts": {
-    "compile": "babel src --out-dir lib",
-    "prepublish": "npm run compile",
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/nelrohd/passport-pinterest-token.git"
