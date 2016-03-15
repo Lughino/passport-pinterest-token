@@ -1,0 +1,52 @@
+{
+  "name": "passport-facebook-token",
+  "version": "1.0.0",
+  "description": "Pinterest token authentication strategy for Passport",
+  "main": "lib/index.js",
+  "scripts": {
+    "compile": "babel src --out-dir lib",
+    "prepublish": "npm run compile",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nelrohd/passport-pinterest-token.git"
+  },
+  "keywords": [
+    "passport",
+    "pinterest",
+    "auth",
+    "authn",
+    "authentication",
+    "identity"
+  ],
+  "author": {
+    "name": "Nelinelo Inc.",
+    "email": "kevin@nelinelo.com",
+    "url": "https://nelinelo.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "http://github.com/nelrohd/passport-pinterest-token/issues"
+  },
+  "dependencies": {
+    "passport-oauth": "1.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.4.5",
+    "babel-plugin-add-module-exports": "0.1.2",
+    "babel-preset-es2015": "6.3.13",
+    "chai": "3.4.1",
+    "chai-passport-strategy": "0.2.0",
+    "coveralls": "2.11.6",
+    "cz-conventional-changelog": "1.1.5",
+    "isparta": "4.0.0",
+    "mocha": "2.4.2",
+    "sinon": "1.17.3"
+  },
+  "publishConfig": {
+    "tag": "latest"
+  },
+  "release": {
+    "branch": "master"
+  }
+}
