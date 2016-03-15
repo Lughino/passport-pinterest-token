@@ -1,7 +1,7 @@
 /**
  * Module dependencies.
  */
-var Strategy = require('./src/strategy');
+var Strategy = require('./strategy');
 
 
 /**
