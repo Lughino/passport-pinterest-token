@@ -47,6 +47,8 @@ function PinterestTokenStrategy(options, verify) {
 
   OAuth2Strategy.call(this, options, verify);
   this.name = 'pinterest-token';
+  this._oauth2.useAuthorizationHeaderforGET(true);
+  this._profileURL = options.profileURL || 'https://api.pinterest.com/v1/me/?fields=id,username,name,email,first_name,last_name,bio,created_at,url,image[30x30,60x60,110x110,165x165,280x280]';
 }
 
 /**
@@ -114,13 +116,13 @@ PinterestTokenStrategy.prototype.userProfile = function(accessToken, done) {
     if (err) { return done(new InternalOAuthError('failed to fetch user profile', err)); }
 
     try {
-      var json = JSON.parse(body);
+      var json = JSON.parse(body).data;
 
       var profile = { provider: 'pinterest' };
       profile.id = json.id;
       profile.displayName = json.name;
-      profile.name = { familyName: json.family_name,
-        givenName: json.given_name };
+      profile.name = { familyName: json.first_name,
+        givenName: json.last_name };
       profile.emails = [{ value: json.email }];
 
       profile._raw = body;
